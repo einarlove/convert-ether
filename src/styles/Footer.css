@@ -1,0 +1,10 @@
+.footer {
+  margin: 2em;
+  color: #999;
+  border-bottom: 1px solid transparent;
+  transition: .1s ease-out-cubic;
+}
+
+a.footer:hover {
+  border-bottom-color: currentColor;
+}

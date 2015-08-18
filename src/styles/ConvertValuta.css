@@ -1,0 +1,31 @@
+.convert-valuta {
+  font-size: 2em;
+  margin-top: 3em;
+  padding: 0 1em;
+}
+
+.convert-valuta .user-input {
+  display: inline-block;
+  padding: .2em .32em;
+  margin: 0 -.32em;
+  border-radius: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom .1s ease-out-cubic, background-color .1s ease-out-cubic;
+
+  &:hover {
+    background-color: #f6f6f6;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.convert-valuta .user-input:empty {
+  width: 3em;
+  border-bottom-color: #999;
+
+  &:focus {
+    border-bottom-color: transparent;
+  }
+}

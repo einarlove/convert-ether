@@ -49,7 +49,7 @@ const postcss = [
   require('postcss-color-function')(),
   require('postcss-easings'),
   require('postcss-focus'),
-  require('autoprefixer-core'),
+  require('autoprefixer-core')(),
 ]
 
 // Minification
