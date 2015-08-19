@@ -43,7 +43,7 @@ export default class Application extends Component {
   }
 
   render() {
-    if (!this.props.marketValue.current) {
+    if (!this.props.marketValue.current || true) {
       return <Loader className="page-loader" label="Fetching ether market value"/>
     }
 
