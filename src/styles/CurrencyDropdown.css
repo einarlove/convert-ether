@@ -1,0 +1,60 @@
+.is-for-currency-dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: .3em;
+    border-radius: 2px;
+    box-shadow: 0 -1px 10px 2px rgba(0,0,0, 0.15);
+  }
+
+  .dropdown::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 .2em .15em .15em;
+    border-color: transparent transparent white transparent;
+  }
+
+  .dropdown > div {
+    padding: .1em .6em;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: #f6f6f6;
+    }
+
+    &.is-active {
+      font-weight: bolder;
+      background-color: #fafafa;
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    top: 46%;
+    right: -.5em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .2em .15em 0 .15em;
+    border-color: #aaa transparent transparent transparent;
+    opacity: .3;
+    transition: .6s ease-out-cubic;
+  }
+
+  &:hover .triangle {
+    opacity: 1;
+    transition-duration: .3s;
+  }
+}

@@ -1,0 +1,23 @@
+.loader {
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader .label {
+  margin-top: 1em;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.loader .svg-container {
+  height: 100%;
+  width: 100%;
+}
+
+.loader svg {
+  height: 100%;
+  width: 100%;
+  display: block;
+}

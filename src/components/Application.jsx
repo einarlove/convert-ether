@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+import fastclick from 'fastclick'
 import ConvertValuta from './ConvertValuta'
 import MarketValue from './MarketValue'
 import Footer from './Footer'
-import { getExhangeRate, getMarketValue, setEther } from '../actions'
+import { getExhangeRate, getMarketValue } from '../actions'
 import { connect } from 'react-redux'
 import Loader from './Loader'
 
@@ -28,28 +29,28 @@ export default class Application extends Component {
     super(props)
   }
 
-  componentWillMount() {
-    const ether = parseInt(localStorage.getItem('ether'), 10)
-
-    if (ether) {
-      this.props.dispatch(setEther(ether))
-    }
-  }
-
   componentDidMount() {
+    fastclick.attach(document.body)
+
     this.props.dispatch(getExhangeRate(this.props.currency))
     this.props.dispatch(getMarketValue())
   }
 
+  componentWillUpdate(nextProps) {
+    if (this.props.currency !== nextProps.currency) {
+      this.props.dispatch(getExhangeRate(nextProps.currency))
+    }
+  }
+
   render() {
     if (!this.props.marketValue.current) {
-      return <Loader label="Fetching ether market value"/>
+      return <Loader className="page-loader" label="Fetching ether market value"/>
     }
 
     return (
       <div className="application">
         <main className="main-content">
-          <ConvertValuta onEtherChange={ether => this.props.dispatch(setEther(ether))}/>
+          <ConvertValuta />
           <MarketValue />
         </main>
         <Footer />

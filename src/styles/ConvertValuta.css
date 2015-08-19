@@ -29,3 +29,10 @@
     border-bottom-color: transparent;
   }
 }
+
+.convert-valuta .currency-loader {
+  display: inline-block;
+  height: .9em;
+  width: .9em;
+  margin-bottom: -.1em;
+}

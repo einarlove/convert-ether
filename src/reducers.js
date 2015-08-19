@@ -1,3 +1,6 @@
+const initialEther = parseInt(localStorage.getItem('ether'), 10) || null
+const initialCurrency = localStorage.getItem('currency') || 'USD'
+
 export function exchangeRates(state = {}, action) {
   switch (action.type) {
   case 'GET_EXCHANGE_RATE':
@@ -14,7 +17,7 @@ export function exchangeRates(state = {}, action) {
   }
 }
 
-export function currency(state = 'NOK', action) {
+export function currency(state = initialCurrency, action) {
   switch (action.type) {
   case 'SET_CURRENCY':
     return action.currency
@@ -23,7 +26,7 @@ export function currency(state = 'NOK', action) {
   }
 }
 
-export function ether(state = null, action) {
+export function ether(state = initialEther, action) {
   switch (action.type) {
   case 'SET_ETHER':
     return action.ether

@@ -1,34 +1,19 @@
 import React, { Component, PropTypes } from 'react'
 import ripple from '../assets/ripple.svg'
+import classnames from 'classnames'
 
-// import 'styles/Loader'
+import 'styles/Loader'
 
 export default class Loader extends Component {
 
   static propTypes = {
     color: PropTypes.string,
     label: PropTypes.string,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
     color: 'currentColor',
-  }
-
-  style = {
-    minHeight: '100vh',
-    marginTop: '-5%',
-    display: '-webkit-flex',
-    WebkitJustifyContent: 'center',
-    WebkitAlignItems: 'center',
-    WebkitFlexDirection: 'column',
-  }
-
-  svgStyle = {
-    width: '8em',
-  }
-
-  labelStyle = {
-    marginTop: '1em',
   }
 
   constructor(props) {
@@ -36,13 +21,17 @@ export default class Loader extends Component {
   }
 
   render() {
+    const className = classnames('loader', this.props.className)
+
     return (
       <div
-        className="loader"
-        style={{...this.style, stroke: this.props.color}}>
-        <div style={this.svgStyle} dangerouslySetInnerHTML={{__html: ripple}} />
+        className={className}
+        style={{stroke: this.props.color}}>
+        <div className="svg-container" dangerouslySetInnerHTML={{__html: ripple}} />
         {this.props.label &&
-          <div style={this.labelStyle}>{this.props.label}</div>
+          <div className="label">
+            {this.props.label}
+          </div>
         }
       </div>
 

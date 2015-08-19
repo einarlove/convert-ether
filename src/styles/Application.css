@@ -46,3 +46,18 @@ strong {
   justify-content: center;
   flex-grow: 1;
 }
+
+.page-loader {
+  margin-top: -5%;
+  min-height: 100vh;
+
+  .svg-container {
+    width: 8em;
+    height: 8em;
+  }
+
+  .label {
+    letter-spacing: .03em;
+    font-size: 1.2em;
+  }
+}

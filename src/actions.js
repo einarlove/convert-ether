@@ -47,3 +47,12 @@ export function setEther(ether) {
     ether: ether,
   }
 }
+
+export function setCurrency(currency) {
+  localStorage.setItem('currency', currency)
+
+  return {
+    type: 'SET_CURRENCY',
+    currency: currency,
+  }
+}
