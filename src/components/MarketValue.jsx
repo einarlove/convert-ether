@@ -39,7 +39,7 @@ export default class MarketValue extends Component {
       <div className="market-value">
         The market price is currently {this.renderDollar(current)} per ether,
          and has been {this.renderDollar(high)} as the highest
-          and {this.renderDollar(low)} as lowest price the last 24 hours.
+          and {this.renderDollar(low)} as lowest price the <nobr>last 24 hours.</nobr>
       </div>
     )
   }
