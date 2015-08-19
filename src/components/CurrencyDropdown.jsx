@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setCurrency } from '../actions'
 import currencyAlias from '../lib/currency-alias.json'
 import Dropdown from 'react-lite-dropdown'
+import analytics from '../utils/analytics'
 
 import 'styles/CurrencyDropdown'
 
@@ -44,6 +45,10 @@ export default class CurrencyDropdown extends Component {
   onChangeCurrency(currency) {
     this.props.dispatch(setCurrency(currency))
     this.onToggle()
+
+    analytics.track('change currency', {
+      label: currency,
+    })
   }
 
   renderChildren() {

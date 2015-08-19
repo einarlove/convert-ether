@@ -6,6 +6,7 @@ import Footer from './Footer'
 import { getExhangeRate, getMarketValue } from '../actions'
 import { connect } from 'react-redux'
 import Loader from './Loader'
+import analytics from '../utils/analytics'
 
 import 'styles/reset'
 import 'styles/Application'
@@ -34,6 +35,8 @@ export default class Application extends Component {
 
     this.props.dispatch(getExhangeRate(this.props.currency))
     this.props.dispatch(getMarketValue())
+
+    analytics.page('Front page')
   }
 
   componentWillUpdate(nextProps) {
