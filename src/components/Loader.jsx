@@ -16,7 +16,7 @@ export default class Loader extends Component {
 
   style = {
     minHeight: '100vh',
-    marginTop: '-10%',
+    marginTop: '-5%',
     display: '-webkit-flex',
     WebkitJustifyContent: 'center',
     WebkitAlignItems: 'center',
@@ -24,7 +24,7 @@ export default class Loader extends Component {
   }
 
   svgStyle = {
-    width: '6em',
+    width: '8em',
   }
 
   labelStyle = {

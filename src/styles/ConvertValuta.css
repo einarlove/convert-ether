@@ -1,13 +1,13 @@
 .convert-valuta {
   font-size: 2em;
-  margin-top: 3em;
+  margin-top: 1em;
   padding: 0 1em;
 }
 
 .convert-valuta .user-input {
   display: inline-block;
-  padding: .2em .32em;
-  margin: 0 -.32em;
+  padding: .2em .25em .18em;
+  margin: 0 -.25em;
   border-radius: 3px;
   border-bottom: 1px solid transparent;
   transition: border-bottom .1s ease-out-cubic, background-color .1s ease-out-cubic;

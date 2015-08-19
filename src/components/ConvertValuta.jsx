@@ -17,6 +17,10 @@ export default class ConvertValuta extends Component {
     super(props)
   }
 
+  spaceThousands(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009')
+  }
+
   onChange(event) {
     const ether = event.currentTarget.innerText.replace(/[^\+0-9]/g, '')
     this.props.onEtherChange(ether)
@@ -36,12 +40,13 @@ export default class ConvertValuta extends Component {
 
   render() {
     const { ether, rate, marketValue, currency } = this.props
-    const convertedValuta = Math.round((ether * marketValue.current) / rate)
+    let convertedValuta = Math.round((ether * marketValue.current) / rate)
+    convertedValuta = this.spaceThousands(convertedValuta)
 
     if (!ether) {
       return (
         <div className="convert-valuta">
-          How much ether do you got? {this.renderEther(ether)}
+          Your {this.renderEther(ether)} ether is worth ...
         </div>
       )
     }
