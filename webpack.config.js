@@ -35,6 +35,11 @@ const loaders = [
 
 const plugins = [
   new webpack.PrefetchPlugin('react'),
+  new webpack.DefinePlugin({
+    'process.env': {
+      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    },
+  }),
 ]
 
 const resolve = {
