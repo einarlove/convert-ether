@@ -19,24 +19,39 @@ export default class ConvertValuta extends Component {
     super(props)
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.ether !== this.props.ether) {
+      this.correctCaretPosition(this.refs['ether-input'].getDOMNode())
+    }
+  }
+
   spaceThousands(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009')
   }
 
+  correctCaretPosition(element) {
+    const range = document.createRange()
+    range.selectNodeContents(element)
+    range.collapse(false)
+
+    const selection = window.getSelection()
+    selection.removeAllRanges()
+    selection.addRange(range)
+  }
+
   onEtherChange(event) {
-    const ether = event.currentTarget.innerText.replace(/[^\+0-9]/g, '')
+    const ether = event.currentTarget.textContent.replace(/[^\+0-9]/g, '')
     this.props.dispatch(setEther(ether))
   }
 
   renderEther(ether) {
     return (
-      <strong className="ether">
-        <div
-          className="user-input"
-          contentEditable
-          onInput={::this.onEtherChange}
-          dangerouslySetInnerHTML={{__html: ether}} />
-      </strong>
+      <strong
+        className="ether-input"
+        ref="ether-input"
+        contentEditable
+        onInput={::this.onEtherChange}
+        dangerouslySetInnerHTML={{__html: ether}} />
     )
   }
 

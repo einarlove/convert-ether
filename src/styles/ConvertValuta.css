@@ -4,8 +4,9 @@
   padding: 0 1em;
 }
 
-.convert-valuta .user-input {
+.convert-valuta .ether-input {
   display: inline-block;
+  height: 100%;
   padding: .2em .25em .18em;
   margin: 0 -.25em;
   border-radius: 3px;
@@ -21,8 +22,9 @@
   }
 }
 
-.convert-valuta .user-input:empty {
+.convert-valuta .ether-input:empty {
   width: 3em;
+  vertical-align: middle;
   border-bottom-color: #999;
 
   &:focus {
