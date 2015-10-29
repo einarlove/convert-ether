@@ -1,0 +1,17 @@
+.graph-widget-toggle-button {
+  font-weight: bolder;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 13em;
+  padding: .8em 2em;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: .3s ease-out-cubic;
+}
+
+.graph-widget-toggle-button:hover {
+  font-weight: 600;
+}

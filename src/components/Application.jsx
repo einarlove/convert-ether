@@ -7,6 +7,7 @@ import { getExhangeRate, getMarketValue } from '../actions'
 import { connect } from 'react-redux'
 import Loader from './Loader'
 import analytics from '../utils/analytics'
+import GraphWidget from './GraphWidget'
 
 import 'styles/reset'
 import 'styles/Application'
@@ -55,6 +56,7 @@ export default class Application extends Component {
         <main className="main-content">
           <ConvertValuta />
           <MarketValue />
+          <GraphWidget />
         </main>
         <Footer />
       </div>

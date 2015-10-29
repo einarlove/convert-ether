@@ -42,6 +42,7 @@
     "postcss-focus": "^0.1.1",
     "postcss-loader": "^0.5.1",
     "postcss-nested": "^0.3.2",
+    "qs": "^5.2.0",
     "raw-loader": "^0.5.1",
     "react": "^0.13.3",
     "react-lite-dropdown": "^0.1.5",
