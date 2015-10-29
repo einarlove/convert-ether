@@ -1,7 +1,7 @@
 {
-  "name": "ether-value",
+  "name": "convert-ether",
   "version": "0.0.0",
-  "description": "Get ether value",
+  "description": "Convert eather to a valuta",
   "scripts": {
     "postinstall": "npm run build",
     "build": "babel-node node_modules/.bin/webpack",
