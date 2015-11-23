@@ -3,6 +3,10 @@
   position: relative;
   cursor: pointer;
 
+  .display {
+    padding-right: .6em;
+  }
+
   .dropdown {
     position: absolute;
     top: 100%;
@@ -41,9 +45,10 @@
   }
 
   .triangle {
+    z-index: -1;
     position: absolute;
     top: 46%;
-    right: -.5em;
+    right: .1em;
     width: 0;
     height: 0;
     border-style: solid;
